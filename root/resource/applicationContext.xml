@@ -17,10 +17,4 @@
 	<bean class="org.springframework.orm.hibernate3.HibernateTransactionManager" id="transactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean class="org.jbpm.pvm.internal.processengine.SpringHelper" id="springHelper">
-	</bean>
-	<bean id="processEngine" factory-method="createProcessEngine" factory-bean="springHelper">
-	</bean>
-	
-	<import resource="spring/framework.xml"/>
 </beans>

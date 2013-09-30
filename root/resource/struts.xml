@@ -6,12 +6,13 @@
 	<constant name="struts.devMode" value="true" />
 	<constant name="struts.ui.theme" value="simple" />
 
-	<package name="framework-default" extends="json-default" namespace="/">
+	<package name="framework-default" extends="json-default"
+		namespace="/">
 		<interceptors>
-			<interceptor name="securityInterceptor" class="unknown.framework.support.action.SecurityInterceptor"></interceptor>
+			<!-- <interceptor name="securityInterceptor" class="unknown.framework.support.action.SecurityInterceptor"></interceptor> -->
 			<interceptor-stack name="frameworkStack">
 				<interceptor-ref name="defaultStack"></interceptor-ref>
-				<interceptor-ref name="securityInterceptor"></interceptor-ref>
+				<!-- <interceptor-ref name="securityInterceptor"></interceptor-ref> -->
 			</interceptor-stack>
 		</interceptors>
 		<default-interceptor-ref name="frameworkStack"></default-interceptor-ref>
@@ -22,13 +23,10 @@
 				<param name="excludeNullProperties">true</param>
 				<param name="contentType">text/html</param>
 			</result>
-			<result name="login" type="redirectAction">website/index!executeLogin.action
-			</result>
-			<result name="logout" type="redirectAction">website/index!executeLogout.action </result>
+			<!-- <result name="login" type="redirectAction">website/index!executeLogin.action 
+				</result> <result name="logout" type="redirectAction">website/index!executeLogout.action 
+				</result> -->
 		</global-results>
 	</package>
-	
-	<include file="struts/website.xml"></include>
-	<include file="struts/manage.xml"></include>
 </struts>
 
